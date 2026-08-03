@@ -1,0 +1,21 @@
+event_id,patient_id,encounter_id,event_datetime,event_type,location,description
+EVT-001,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 09:20:00,Injury,Home,Fall onto outstretched left hand
+EVT-002,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:02:00,ED arrival,Emergency Department,Booked in at ED reception
+EVT-003,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:11:00,Triage,ED Majors,"Nurse triage, first observations and pain score"
+EVT-004,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:22:00,Analgesia,ED Majors,IV paracetamol and oral morphine given
+EVT-005,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:48:00,ED clerking,ED Majors,Assessed by ED doctor; wrist immobilised in temporary splint
+EVT-006,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,Phlebotomy,ED Majors,"Bloods taken: FBC, U&E, bone profile, coagulation, group and save"
+EVT-007,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:30:00,Imaging — X-ray left wrist,Radiology,AP and lateral radiographs of the wrist
+EVT-008,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:52:00,Radiology report,Radiology,Report issued for pre-reduction radiographs
+EVT-009,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 12:48:00,Procedure — closed reduction,ED Majors,Haematoma block and manipulation; backslab applied
+EVT-010,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 13:20:00,Imaging — check X-ray left wrist,Radiology,Post-reduction radiographs in plaster
+EVT-011,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 13:40:00,Radiology report,Radiology,Report issued for post-reduction radiographs
+EVT-012,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 14:20:00,Orthopaedic review,ED Majors,Reviewed by T&O registrar; decision to admit and list for ORIF
+EVT-013,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 15:50:00,Ward transfer,Ward 12 — Trauma & Orthopaedics,"Transferred to trauma ward, bed 6"
+EVT-014,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 16:05:00,Nursing admission assessment,Ward 12 — Trauma & Orthopaedics,"Ward nursing admission, risk assessments completed"
+EVT-015,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 16:30:00,VTE prophylaxis,Ward 12 — Trauma & Orthopaedics,Enoxaparin given
+EVT-016,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 18:30:00,Pre-operative assessment,Ward 12 — Trauma & Orthopaedics,Anaesthetic review ahead of day-2 list
+EVT-017,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 21:40:00,Nursing progress note,Ward 12 — Trauma & Orthopaedics,Evening review and limb observations
+EVT-018,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 02:00:00,Nil by mouth,Ward 12 — Trauma & Orthopaedics,NBM commenced for theatre
+EVT-019,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 02:30:00,Night nursing note,Ward 12 — Trauma & Orthopaedics,Night observations and limb check
+EVT-020,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 08:15:00,Consultant ward round,Ward 12 — Trauma & Orthopaedics,Trauma consultant ward round; confirmed for afternoon list

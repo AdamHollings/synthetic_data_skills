@@ -18,7 +18,10 @@ Many PoCs need only the first.
 | Bark (`github.com/suno-ai/bark`) | Speech plus non-speech events: coughs, sighs, pauses | No verdict recorded — confirm with user | GPU strongly recommended; slow inference; model download |
 | pyttsx3 / eSpeak | Offline TTS, no deep learning, few lines of code | No verdict recorded — confirm with user | Robotic quality; placeholder audio only, not realism-sensitive PoCs |
 | Hugging Face TTS models | Range of text-to-speech models | Maybe | Large model downloads; environment integration unresolved |
-| Coqui | Named in the audit's gap assessment as covering normal speech | Unassessed | No row, link, setup notes or verdict recorded |
+
+Not an option until assessed: **Coqui** — named in the audit's gap assessment as covering normal
+speech, but with no row, link, setup notes or verdict recorded. Ask the user before treating it as
+available.
 
 SDialog covers dialogue and audio together, and its JSON export yields a transcript aligned to the
 audio, which supplies ground truth without transcription. Use Bark when a non-speech event is

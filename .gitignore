@@ -1,2 +1,4 @@
 .claude/settings.local.json
 .venv
+data_repos/
+.env

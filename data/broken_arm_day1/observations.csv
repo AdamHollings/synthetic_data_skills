@@ -1,0 +1,11 @@
+observation_id,patient_id,encounter_id,observation_datetime,respiratory_rate_per_min,spo2_percent,supplemental_oxygen,systolic_bp_mmhg,diastolic_bp_mmhg,pulse_bpm,temperature_c,consciousness_acvpu,pain_score_0_10,news2_total,context
+OBS-001,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:11:00,20,96,No,150,77,104,36.6,Alert,8,1,"Triage — in severe pain, deformed wrist"
+OBS-002,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:50:00,18,97,No,138,73,95,36.6,Alert,7,1,Post first analgesia
+OBS-003,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 12:45:00,18,97,No,142,74,97,36.7,Alert,8,1,Pre-procedure
+OBS-004,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 13:10:00,15,96,No,124,68,77,36.3,Alert,2,0,"Post reduction, post haematoma block"
+OBS-005,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 14:00:00,16,97,No,129,71,77,36.7,Alert,2,0,Pre-transfer to ward
+OBS-006,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 16:10:00,16,97,No,129,71,82,36.9,Alert,3,0,Ward admission observations
+OBS-007,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 20:00:00,17,97,No,131,71,81,36.9,Alert,4,0,Evening round
+OBS-008,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 00:00:00,17,96,No,136,77,82,37.1,Alert,5,0,"Night — woken by pain, PRN analgesia requested"
+OBS-009,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 04:00:00,15,97,No,133,68,75,36.6,Alert,2,0,Night observations
+OBS-010,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 07:00:00,16,97,No,133,70,76,36.7,Alert,2,0,Pre-theatre observations

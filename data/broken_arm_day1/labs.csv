@@ -1,0 +1,16 @@
+result_id,patient_id,encounter_id,collected_datetime,reported_datetime,panel,test_name,value,unit,reference_range,abnormal_flag
+LAB-001,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Haemoglobin,117,g/L,115-165,Normal
+LAB-002,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,White cell count,6.4,10^9/L,4.0-11.0,Normal
+LAB-003,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Platelets,240,10^9/L,150-400,Normal
+LAB-004,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Sodium,138,mmol/L,133-146,Normal
+LAB-005,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Potassium,4.6,mmol/L,3.5-5.3,Normal
+LAB-006,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Urea,7.1,mmol/L,2.5-7.8,Normal
+LAB-007,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Creatinine,71,umol/L,45-84,Normal
+LAB-008,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,eGFR,80,mL/min/1.73m2,>90,Low
+LAB-009,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,C-reactive protein,1.8,mg/L,<5,Normal
+LAB-010,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Adjusted calcium,2.23,mmol/L,2.20-2.60,Normal
+LAB-011,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Phosphate,1.32,mmol/L,0.80-1.50,Normal
+LAB-012,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Alkaline phosphatase,77,U/L,30-130,Normal
+LAB-013,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Vitamin D (25-OH),38,nmol/L,>50,Low
+LAB-014,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,INR,1.1,ratio,0.8-1.2,Normal
+LAB-015,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:05:00,2026-02-17 12:20:00,Pre-operative bloods,Group and save,"Sample received, group O RhD positive",,,Normal

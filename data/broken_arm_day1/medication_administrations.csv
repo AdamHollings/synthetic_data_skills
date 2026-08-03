@@ -1,0 +1,11 @@
+administration_id,patient_id,encounter_id,administration_datetime,medication,dose,route,indication,status
+MED-001,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:22:00,Paracetamol,1 g,IV,Acute pain,Given
+MED-002,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:25:00,Morphine sulfate oral solution,5 mg,PO,Acute pain (age-adjusted dose),Given
+MED-003,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 12:48:00,Lidocaine 1%,10 mL,Haematoma block,Local anaesthesia for closed reduction,Given
+MED-004,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 13:10:00,Ondansetron,4 mg,IV,Nausea after opioid,Given
+MED-005,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 16:30:00,Enoxaparin sodium,40 mg,SC,VTE prophylaxis,Given
+MED-006,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 18:00:00,Paracetamol,1 g,PO,Regular analgesia,Given
+MED-007,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 22:00:00,Paracetamol,1 g,PO,Regular analgesia,Given
+MED-008,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 00:05:00,Morphine sulfate oral solution,5 mg,PO,"PRN analgesia, pain score 5/10",Given
+MED-009,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 06:00:00,Paracetamol,1 g,IV,Regular analgesia — IV route as nil by mouth from 02:00,Given
+MED-010,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 08:00:00,Amlodipine,5 mg,PO,Regular medicine continued in hospital (Once daily),Given with sips of water (pre-operative)

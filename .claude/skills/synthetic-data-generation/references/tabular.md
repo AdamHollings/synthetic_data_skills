@@ -16,8 +16,13 @@ synthetic-from-real-data are covered, not gaps.
 | Plaitpy (`github.com/plaitpy/plaitpy`) | YAML templates with distributions and conditional logic; encodes correlations explicitly (age ↔ condition prevalence) | Maybe | Not actively maintained — confirm before making it load-bearing |
 | synthcity (`github.com/vanderschaarlab/synthcity`) | Broadest suite: many generators plus fidelity/utility/privacy metrics; static, regular and irregular time series, censored, multi-source, composite; survival and time-series healthcare plugins; scores re-identification risk and attribute inference via XGBoost or neural net | Maybe | PyTorch, heavy dependencies — flag before use. Permissive licence |
 | NHSSynth (`github.com/nhsengland/NHSSynth`, P41) | VAE-based generation with differential privacy, from real seed data | Inspiration — see entry below | MIT, Python 3.11+, PyTorch, Poetry. Requires real seed data |
-| Artificial HES data | Reference point for artificial hospital activity data | Unknown | No description or link recorded in the audit — ask the user before treating it as an option |
-| dpart | Named only as an existing tool for synthesising from real data | Unassessed | No link, verdict or setup notes recorded — ask the user before treating it as an option |
+
+Not options until assessed. Ask the user before treating either as available:
+
+- **Artificial HES data** — a reference point for artificial hospital activity data, but the audit
+  records no description or link.
+- **dpart** — named only as an existing tool for synthesising from real data; no link, verdict or
+  setup notes recorded.
 
 Faker and Mimesis produce no inter-field logic: nothing prevents a 3-year-old prescribed a statin.
 Constrain them with the patient state.

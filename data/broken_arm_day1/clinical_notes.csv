@@ -1,0 +1,344 @@
+note_id,patient_id,encounter_id,note_datetime,note_type,author_name,author_role,specialty,location,note_text,typo_edits_applied
+NOTE-001,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:11:00,ED triage note,S. Okafor,Band 6 ED nurse,Emergency Medicine,ED Majors,"PC: Left wrist injury and pain.
+
+HPC: 68 y/o female, FOOSH on icy path outside home at ~09:20 today, landed on outstretched L hand. Immediate pain and deformity L wrist. No head injury, no LOC, no other injury reported. Paraesthesia in median nerve distribution L hand. Self-presented to ED with neighbour by car.
+
+PMH: Essential hypertension, osteopenia.  
+DH: Amlodipine 5 mg OD. Allergy: Penicillin – rash.
+
+Obs 10:11: RR 20, SpO2 96% RA, BP 150/77, HR 104, Temp 36.6°C, Alert. Pain score 8/10. NEWS2 = 1.
+
+O/E: Obvious deformity L wrist, closed injury. Fingers warm and pink, CRT <2s, radial pulse present. Reports paraesthesia thumb, index and middle finger.
+
+Triage category: 2. Request urgent review in Majors. Temporary splint and analgesia requested.
+
+S. Okafor, Band 6 ED nurse, ED Majors, 10:11",0
+NOTE-002,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:48:00,ED clerking,Dr M. Whitfield,ED SHO,Emergency Medicine,ED Majors,"ED clerking
+
+PC:
+Left wrist pain and deformity after fall.
+
+HPC:
+Yvonne Cooper, 68F, RHD, presented with acute left wrist pain following fall from standing height at ~09:20 today. Slipped on ice outside home, landed on outstretched left hand (FOOSH). Immediate severe pain and visible deformity at left wrist. Unable to use left hand since. No open wound, no bleeding. Reports tingling in left thumb, index and middle fingers since injury. No weakness in hand reported. No pain in elbow, shoulder, or elsewhere. No head strike, no loss of consciousness, no amnesia, no vomiting, no headache, no neck pain. No chest or abdominal pain. Self-presented to ED with neighbour by car, arrived 10:02. Given IV paracetamol and oral morphine in ED with partial pain relief. Wrist immobilised in temporary splint prior to review.
+
+PMH:
+- Essential hypertension  
+- Osteopenia
+
+DH:
+- Amlodipine 5 mg PO OD  
+No anticoagulants, no antiplatelets reported.
+
+Allergies:
+- Penicillin — rash
+
+SH:
+Lives with spouse in own home. Independent with ADLs. Mobilises independently, no walking aids. Never smoked. Alcohol 0 units/week. Drives.
+
+FH:
+Not discussed.
+
+Systems review:
+No recent fever, weight loss or systemic symptoms. No cardiorespiratory or GI complaints volunteered. No urinary symptoms.
+
+Obs (10:11):
+RR 20, SpO2 96% RA, BP 150/77, HR 104, Temp 36.6°C. Alert. Pain 8/10 at triage.
+
+O/E:
+General: Alert, oriented, appears uncomfortable but not in distress. Speaking in full sentences.  
+Airway patent, breathing unlaboured, sats maintained on air.  
+CVS: Peripheries warm, no clinical pallor or cyanosis.  
+Resp: No increased work of breathing.  
+Abd: Soft, non-tender by inspection and brief palpation.  
+Neck/back: No midline tenderness reported or on brief palpation. Full neck movement without pain.  
+
+Left upper limb:
+Inspection: Temporary splint in place to left forearm/wrist. Visible deformity at distal forearm consistent with distal radius fracture. No open wounds. Moderate swelling around wrist. No bruising elsewhere on limb noted.  
+Palpation: Marked tenderness over distal radius region. No bony tenderness reported at left elbow or shoulder.  
+ROM: Fingers able to flex and extend, limited by pain but can move all digits. Wrist movement not tested due to pain and known fracture. Elbow and shoulder ROM preserved and painless.  
+
+Neurovascular (left hand/wrist):
+- Colour: Pink  
+- Temperature: Warm  
+- CRT: <2 seconds in all digits  
+- Pulses: Radial pulse present  
+- Motor: Able to make a fist and extend fingers against gravity; thumb opposition preserved, limited by pain  
+- Sensation: Reduced, tingling reported in median nerve distribution (thumb, index, middle finger). No complaint of numbness in ring or little finger.  
+No signs of acute compartment syndrome (no disproportionate pain, no tenseness of forearm on palpation).  
+
+Right upper limb:
+No deformity, full painless ROM at shoulder, elbow, wrist and hand by brief assessment. Normal function.
+
+Lower limbs:
+No deformity, patient reports no pain. Moving legs freely on trolley.
+
+Head injury:
+No head strike, no loss of consciousness, no vomiting, no headache, no seizure, no visual disturbance. No scalp wounds seen. GCS 15 throughout.
+
+Provisional diagnosis:
+Closed dorsally displaced extra-articular fracture of the left distal radius with associated ulnar styloid avulsion, following FOOSH. Median nerve paraesthesia in left hand. Haemodynamically stable.
+
+Investigations:
+- X-ray left wrist (AP and lateral) performed: shows dorsally displaced, dorsally angulated extra-articular distal radius fracture with minimal dorsal cortical comminution, no intra-articular extension, carpal alignment maintained, associated ulnar styloid avulsion, soft tissue swelling. Closed injury.  
+- Plan bloods: FBC, U&E, CRP, clotting, group and save, bone profile, vitamin D as per local protocol (to be sent).  
+
+Plan:
+- Maintain left wrist in temporary splint, keep elevated in sling when possible.  
+- Continue regular analgesia as per ED protocol; reassess pain once current analgesia has taken full effect.  
+- Keep NBM pending senior review and decision re need for manipulation under sedation or theatre.  
+- Monitor neurovascular status of left hand: repeat checks for pain, CRT, radial pulse, motor and sensory function, particularly median nerve symptoms.  
+- Refer to T&O for assessment and definitive management (likely reduction and immobilisation vs ORIF depending on senior decision).  
+- Consider osteoporosis/fragility fracture assessment once acute management complete; inform T&O team re osteopenia history.  
+- Safety: no features of head injury; no indication for CT head at present.  
+- Update patient and spouse regarding injury and anticipated course once plan confirmed by seniors.
+
+Dr M. Whitfield, ED SHO, ED Majors, 10:48",0
+NOTE-003,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 11:52:00,Radiology report,Dr J. Harcourt,Consultant radiologist,Radiology,Radiology,"Clinical details:  
+Yvonne Cooper, 68-year-old female, left (non-dominant) wrist injury following FOOSH on icy path at home this morning. Pain, deformity and swelling. Closed injury. Pre-reduction radiographs.
+
+Examination:  
+AP and lateral radiographs of the left wrist.
+
+Findings:  
+Transverse extra-articular fracture of the distal radius with dorsal displacement and dorsal angulation of the distal fragment. Minimal comminution of the dorsal cortex. No radiographic evidence of intra-articular extension. Carpal alignment maintained. Associated ulnar styloid avulsion fracture. Surrounding soft tissue swelling.
+
+Conclusion:  
+Dorsally displaced and angulated extra-articular distal radius fracture with minimal dorsal cortical comminution and associated ulnar styloid avulsion. No intra-articular extension. Carpal alignment preserved.
+
+Dr J. Harcourt, Consultant radiologist, Radiology, 11:52",0
+NOTE-004,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 12:55:00,Procedure note — closed reduction,Dr A. Rennick,ED registrar,Emergency Medicine,ED Majors,"Procedure: Haematoma block and closed reduction of left distal radius fracture with ulnar styloid avulsion.
+
+Indication: Closed dorsally displaced extra-articular fracture of left distal radius with ulnar styloid avulsion following FOOSH at 09:20. Significant pain and deformity. Paraesthesia in median nerve distribution pre-procedure. Closed injury.
+
+Consent: Procedure, risks and benefits explained to the patient including pain, failure of reduction, need for further manipulation/ORIF, nerve/vascular injury, infection, stiffness, cast complications. Alternatives including manipulation under sedation/GA discussed. Patient had capacity, questions answered, verbal consent obtained.
+
+Pre-procedure status: 12:45 obs: RR 18, SpO2 97% RA, BP 142/74, HR 97, temp 36.7C, alert, pain 8/10. Left upper limb in temporary splint. Hand pink, warm, CRT <2s, radial pulse present. Sensation reduced with tingling in thumb, index and middle finger. Able to flex fingers, limited by pain. No breach of skin.
+
+Anaesthesia: Haematoma block performed using aseptic technique. Skin cleaned with antiseptic solution over distal radius fracture site. 10 mL 1% lidocaine drawn up. Needle advanced dorsally into fracture haematoma under bony landmark guidance, after negative aspiration for blood/air injected slowly in divided doses. No immediate complications. Time of injection 12:48. No other local anaesthetic given.
+
+Technique: After allowing time for onset of anaesthesia, temporary splint removed. Closed manipulation of left distal radius performed with traction and counter-traction, followed by correction of dorsal displacement and dorsal angulation by longitudinal traction, gentle exaggeration of deformity, then palmar flexion and ulnar deviation. No audible or palpable crepitus beyond expected. Patient tolerated procedure with some discomfort but no need for additional systemic analgesia during manipulation.
+
+Immobilisation: Below-elbow dorsal plaster of Paris backslab applied with adequate padding. Wrist positioned in slight flexion and ulnar deviation. Fingers left free. Sling provided.
+
+Immediate post-procedure neurovascular check: Hand pink and warm. CRT <2s in all fingers. Radial pulse palpable. Patient able to actively flex and extend fingers. Sensation subjectively unchanged compared to pre-procedure with ongoing tingling in thumb, index and middle finger; no new sensory deficit reported. No increase in pain on passive finger stretch. Backslab not tight on examination.
+
+Complications: No immediate complications. No evidence of local anaesthetic toxicity. No vascular compromise noted. No breach of skin.
+
+Plan: Left wrist post-reduction radiographs (AP and lateral) requested to assess position. Continue limb elevation in sling. Ongoing neurovascular observations as per protocol. Analgesia as prescribed.
+
+Dr A. Rennick, ED registrar, ED Majors, 12:55",0
+NOTE-005,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 13:40:00,Radiology report,Dr J. Harcourt,Consultant radiologist,Radiology,Radiology,"Radiology report – X-ray left wrist post-reduction in plaster
+
+Post-reduction AP and lateral radiographs of the left wrist in plaster. Comparison made with pre-reduction study of 17/02/2026 at 11:30.
+
+Previously demonstrated dorsally displaced and dorsally angulated extra-articular distal radius fracture with associated ulnar styloid avulsion. On current images there is improved alignment following closed reduction. Residual dorsal angulation of the distal radius fragment of approximately 12 degrees with 2 mm radial shortening. No intra-articular extension identified. Carpal alignment remains maintained. Ulnar styloid avulsion fragment unchanged. Plaster backslab in satisfactory position, no radiographic evidence of cast-related complication.
+
+Conclusion: Improved alignment of extra-articular distal radius fracture with residual dorsal angulation (approx. 12 degrees) and 2 mm radial shortening. Ulnar styloid avulsion unchanged. Cast position satisfactory.
+
+Dr J. Harcourt, Consultant radiologist, Radiology, 13:40",0
+NOTE-006,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 14:20:00,Orthopaedic review,Dr P. Lindqvist,T&O registrar,Trauma & Orthopaedics,ED Majors,"Orthopaedic review – ED Majors – 14:20 17/02/2026
+
+PC  
+Left wrist injury after fall.
+
+HPC  
+Yvonne Cooper, 68F, right-hand dominant, slipped on ice outside home at 09:20, FOOSH onto left hand. Immediate pain, deformity and swelling at left wrist. No head injury, no LOC, no other injuries. Self-presented to ED with neighbour. Initial paraesthesia in median nerve distribution (thumb, index, middle finger). Closed injury.
+
+PMH  
+Essential hypertension. Osteopenia.
+
+DH  
+Amlodipine 5 mg OD.  
+Allergy: Penicillin – rash.
+
+Social  
+Lives with spouse, independent, no walking aids. Never smoked. Alcohol 0 units/week.
+
+Events so far  
+ED arrival 10:02. Analgesia with IV paracetamol 1 g and oral morphine 5 mg at 10:22. Wrist immobilised in temporary splint. Bloods taken including FBC, U&E, bone profile, coagulation, G&S. Pre-reduction X-rays at 11:30 showing closed dorsally displaced extra-articular fracture of left distal radius with ulnar styloid avulsion. Haematoma block with 10 mL 1% lidocaine and closed reduction at 12:48; below-elbow dorsal backslab applied. Post-reduction check X-ray at 13:20, report at 13:40. Ondansetron 4 mg IV at 13:10 for nausea. Now referred to T&O for definitive management.
+
+Obs  
+Most recent (14:00): RR 16, SpO2 97% RA, BP 129/71, HR 77, T 36.7°C, Alert, pain 2/10, NEWS2 0.
+
+Bloods  
+FBC, U&E, bone profile, coagulation all within normal limits: Hb 117 g/L, WCC 6.4, Plt 240, Na 138, K 4.6, Urea 7.1, Creat 71 (eGFR 80), Adj Ca 2.23, Phosphate 1.32, ALP 77, CRP 1.8, INR 1.1. Vit D low at 38 nmol/L. G&S: O RhD positive.
+
+O/E  
+Patient comfortable, pain well controlled. Left upper limb in below-elbow dorsal backslab, elevated. Fingers warm and pink, CRT <2s, radial pulse palpable. Sensation: mild tingling in thumb only, normal in index and middle finger compared with earlier documentation of more extensive paraesthesia. Motor: full active finger flexion and extension preserved. No obvious cast tightness, no pain on passive stretch of fingers. No other limb injuries reported or evident.
+
+Imaging review  
+Pre-reduction X-rays: dorsally displaced and dorsally angulated extra-articular fracture of left distal radius with minimal dorsal comminution, no intra-articular extension, carpal alignment maintained, associated ulnar styloid avulsion, soft tissue swelling.  
+Post-reduction X-rays in plaster: improved alignment but residual dorsal angulation approx. 12 degrees with 2 mm radial shortening. No intra-articular extension. Carpal alignment maintained. Backslab position satisfactory, no evidence of cast complication.
+
+Assessment  
+Closed dorsally displaced extra-articular fracture of left distal radius with ulnar styloid avulsion in a 68-year-old right-hand dominant woman with osteopenia. Adequate initial closed reduction but residual dorsal angulation (~12°) and 2 mm radial shortening in the context of osteopenia and functional demands. Improving but persisting median nerve paraesthesia (thumb). Haemodynamically stable, bloods acceptable for surgery.
+
+Decision to admit and rationale for surgery  
+Decision made to admit to Ward 12 – Trauma & Orthopaedics, bed 6, for elevation, neurovascular obs and listing for ORIF with volar locking plate on the day-2 trauma list (planned 18/02/2026).  
+Rationale for surgical fixation rather than cast management:  
+- Residual dorsal angulation (~12°) and radial shortening (2 mm) after best-effort closed reduction.  
+- Osteopenia and age increase risk of loss of reduction in cast.  
+- Dominant functional status and need to optimise alignment to preserve wrist function.  
+- Presence of initial median nerve symptoms – although improved, surgical fixation allows more reliable restoration of volar tilt and space for median nerve.  
+Overall, ORIF with volar locking plate offers better maintenance of reduction, earlier mobilisation and improved functional outcome compared with cast alone in this context.
+
+Consent discussion (outline)  
+Discussed with the patient the nature of the injury and the proposed operation: open reduction and internal fixation of the left distal radius with a volar locking plate. Explained that alternative is non-operative management in cast, but with higher risk of the fracture slipping, malunion, reduced wrist movement and grip strength, and possible need for later corrective surgery.  
+Risks discussed in outline: infection, bleeding, damage to nerves and blood vessels (including risk of median nerve injury or persistent carpal tunnel symptoms), tendon irritation or rupture, stiffness, pain, hardware irritation or failure, non-union or malunion, need for further surgery, scar, CRPS, anaesthetic risks (including DVT/PE, cardiac and respiratory complications, stroke, death – to be further detailed by anaesthetics). Explained that despite surgery there may be some residual pain, stiffness or weakness. Patient given opportunity to ask questions; she verbalised understanding and agreed to proceed. Formal written consent to be completed pre-operatively.
+
+Plan  
+- Admit to Ward 12 – Trauma & Orthopaedics, bed 6.  
+- Elevate left upper limb in sling/pillow; continue regular neurovascular observations as per protocol (NV checks including median nerve symptoms).  
+- Maintain current below-elbow dorsal backslab; ensure not too tight, bivalve if any concern.  
+- List for ORIF of left distal radius with volar locking plate on day-2 trauma list (18/02/2026), pending anaesthetic review.  
+- NBM from 02:00 on 18/02/2026; may eat and drink normally until then.  
+- Analgesia as per ED/ward protocol, avoiding penicillin-based antibiotics due to allergy; no additional antibiotics prescribed at this stage.  
+- VTE prophylaxis: mechanical prophylaxis with TED stockings and early mobilisation as able; chemical prophylaxis as per ward/Trust protocol for trauma admissions (to be prescribed on admission drug chart, taking into account upcoming surgery and anaesthetic plan).  
+- Continue amlodipine unless advised otherwise by anaesthetics.  
+- Bone health: note osteopenia and low Vit D (38 nmol/L); to be referred to fracture liaison / osteoporosis service post-operatively for assessment and Vit D/calcium optimisation.  
+- Documented discussion and plan in notes; nursing staff informed of NBM time and need for limb elevation and NV obs.
+
+Dr P. Lindqvist, T&O registrar, ED Majors, 14:20",0
+NOTE-007,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 16:05:00,Nursing admission assessment,L. Brennan,Staff nurse,Trauma & Orthopaedics,Ward 12,"Nursing admission assessment – Ward 12
+
+Arrived on Ward 12 from ED at approx 15:50, transferred to bed 6. Alert and orientated to person, place, time and situation. Oriented to ward environment, use of call bell, bed controls, ward routine and nil by mouth instructions from 02:00 for planned surgery tomorrow as per T&O plan. Verbalises understanding and able to repeat back key information.
+
+Obs on arrival as per last ED set at 14:00: RR 16, SpO2 97% on air, BP 129/71, HR 77, temp 36.7C, NEWS2 = 0. Afebrile, haemodynamically stable, no nausea at present.
+
+Pain: reports left wrist pain currently 2/10 at rest, increases with movement. Comfortable with limb supported and elevated. Declines further analgesia at present but aware to request if pain worsens.
+
+Limb observtions: Left forearm and hand in below-elbow dorsal backslab from ED. Limb supported on pillows, elevated. Fingers pink and warm, CRT <2s, radial pulse palpable. Patient reports mild tingling in left thumb only, denies numbness in other fingers. Full active flexion and extension of fingers demonstrated. No tightness of cast reported. Advised to keep limb elevated and to report any increase in pain, swelling, numbness, or change in colour/temperature immediately. Neurovascular obs to continue as per T&O plan.
+
+Risk assessments: Initial falls risk assessment completed – no previous falls, independently mobile at baseline, no walking aid, no confusion, but recent fall and current limb injury noted. Falls wristband not applied at present; advised to use call bell for assistance, especially overnight and when mobilising with IV pole or carrying belongings. Pressure area risk assessment completed – intact skin, mobile, able to reposition self in bed; no current pressure damage identified. Standard pressure care advice given, encouraged to change position regularly. VTE risk assessment completed by medical team in ED; patient informed about importance of ankle and toe exercises and early mobilisation as able. Nutrition screening (MUST) completed – eating and drinking normally prior to admission, no recent weight loss reported, BMI approx 26; low nutritional risk. Currently allowed oral intake until NBM time as per plan.
+
+Mobility and social circumstances: At baseline lives with spouse in own home, independently mobile indoors and outdoors without aids, independent with all ADLs. Never smoked, no alcohol intake. On ward currently mobilising short distances with supervision only due to new environment and limb in cast; steady gait observed when transferring from trolley to bed. Encouraged to wear own supportive footwear when out of bed.
+
+Personal care needs: Right-hand dominant. Left arm in backslab limits use for personal care. Able to manage basic tasks (feeding, using call bell, adjusting bed) with right hand. Requires some assistance anticipated for washing/dressing upper body and hair due to immobilised left wrist. Discussed strategies for one-handed tasks; patient receptive. Toilet needs: continent of urine and bowels, prefers to use toilet rather than commode; advised to ring for assistance initially until safe mobility on ward confirmed.
+
+Medical history/medications/allergies: PMH of essential hypertension and osteopenia. Regular medication amlodipine 5 mg once daily – to be reconciled and prescribed by medical team. Allergy to penicillin – rash; red allergy wristband applied and allergy documented on drug chart and notes. No other drug allergies reported.
+
+Next of kin / communication: Lives with spouse. Patient reports spouse aware of admission and planned surgery. Offered to update next of kin; patient states she has already spoken to spouse by phone and will call again once setled, declines staff call at present. Contact details to be confirmed and documented in admission paperwork.
+
+Plan: Continue routine obs and neurovascular checks to left upper limb as per protocol. Maintain elevation of left arm on pillows. Monitor pain and offer PRN analgesia as charted. Ensure NBM from 02:00 as per T&O plan. Assist with personal care as required, encourage safe mobilisation with supervision. Reinforce falls, pressure area and VTE prevention advice.
+
+L. Brennan, Staff nurse, Ward 12, 16:05",2
+NOTE-008,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 18:30:00,Pre-operative anaesthetic assessment,Dr N. Achebe,Anaesthetic registrar,Anaesthetics,Ward 12,"Pre-op anaesthetic assessment – ORIF L distal radius (volar locking plate) planned 18/02/2026, day-2 trauma list.
+
+PC/HPC  
+68 y/o woman with closed dorsally displaced extra-articular fracture L distal radius with ulnar styloid avulsion after FOOSH on ice at 09:20 today. Closed reduction under haematoma block in ED with improved alignment; residual dorsal angulation 12° and 2 mm radial shortening. Neurovascular status now normal. Admitted under T&O, listed for ORIF tomorrow. Currently comfortable with oral analgesia.
+
+PMH  
+– Essential hypertension.  
+– Osteopenia.  
+No documented IHD, CVA, diabetes, CKD, asthma/COPD or OSA in notes.
+
+DH  
+– Amlodipine 5 mg PO OD.  
+Hospital meds today: IV paracetamol 1 g, oral morphine 5 mg, lidocaine 1% 10 mL haematoma block, ondansetron 4 mg IV, enoxaparin 40 mg SC, paracetamol 1 g PO.
+
+Allergies  
+– Penicillin – rash. No other drug allergies recorded.
+
+Social  
+Lives with spouse, independently mobile, no walking aids. Never smoked. Alcohol 0 units/week.
+
+Exercise tolerance  
+No formal METs recorded. Independently mobile at home, no aids. No documented exertional chest pain, dyspnoea, orthopnoea or PND in notes.
+
+Previous anaesthetics  
+No previous anaesthetic history documented in available records. No recorded history of difficult intubation, difficult IV access, severe PONV or peri-anaesthetic complications.
+
+Airway assessment  
+No formal airway grade documented. No record of OSA, stridor, voice change, dysphagia or previous airway problems. Neck and jaw issues not documented. Dentition: no specific dental issues recorded; no mention of loose teeth, dentures or crowns in notes.
+
+Examination/obs  
+Most recent obs (16:10): RR 16, SpO2 97% RA, BP 129/71, HR 82, Temp 36.9°C, Alert, pain 3/10, NEWS2 = 0. Haemodynamically stable, afebrile, saturating well on air. L forearm in below-elbow dorsal backslab; limb pink, CRT <2 s, radial pulse present, sensation normal, full active finger flexion/extension, elevated.
+
+Investigations  
+FBC: Hb 117 g/L, WCC 6.4 x10^9/L, Plt 240 x10^9/L.  
+U&E: Na 138, K 4.6, Urea 7.1, Creat 71, eGFR 80 mL/min/1.73m².  
+Bone profile: Adj Ca 2.23, Phosphate 1.32, ALP 77. Vit D 38 nmol/L (low).  
+CRP 1.8 mg/L.  
+Coag: INR 1.1.  
+Group and save: O RhD positive.  
+All within acceptable range for surgery; mild reduction in eGFR and Vit D noted.
+
+Perioperative risk / ASA  
+Known hypertension on single agent, otherwise fit, non-smoker, good baseline function. No evidence of end-organ damage in available notes.  
+ASA II.
+
+Anaesthetic plan  
+– Planned GA with regional block for post-op analgesia (likely brachial plexus block – final technique to be confirmed on day of surgery).  
+– Standard monitoring (ECG, NIBP, SpO2, capnography, temp).  
+– IV induction, airway with supraglottic airway or ETT as clinically indicated on day.  
+– Intra-op opioid-sparing strategy with regional block and regular paracetamol.  
+– Avoid penicillins due to rash history.  
+– Thromboprophylaxis as per T&O/VTE protocol (already on enoxaparin).  
+– Post-op: recovery then return to Ward 12; limb elevation, neurovascular obs as per T&O; regular analgesia with PRN opioid.
+
+Fasting instructions  
+Per T&O plan: NBM from 02:00 on 18/02/2026 for day-2 trauma list. Clear fluids allowed up to 2 hours before expected theatre time as per local policy, unless plan changes. Continue amlodipine on day of surgery with small sip of water unless instructed otherwise by admitting team.
+
+Consent  
+Anaesthetic risks and benefits to be discussed and formal consent obtained by anaesthetist on day of surgery prior to induction.
+
+Fit for theatre from anaesthetic perspective on current information; no outstanding investigations required at this time.
+
+Dr N. Achebe, Anaesthetic registrar, Ward 12, 18:30",0
+NOTE-009,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 21:40:00,Nursing progress note,D. Marsden,Staff nurse,Trauma & Orthopaedics,Ward 12,"Evening review 21:40. Patient resting in bed, appears comfortble. Reports left wrist pain 4/10 at rest, slightly worse on movement. States good relief from earlier paracetamol; no additional analgesia requested this evening. No nausea.
+
+Limb obs: Left forearm and hand in below-elbow dorsal backslab. Fingers warm and pink, CRT <2s, radial pulse present. Sensation normal in all fingers. Swelling mild. Full active finger flexion and extension. Limb supported on pillows, elevated.
+
+Oral intake: Eating and drinking well this evening, tolerating diet and fluids. Aware of plan to be NBM from 02:00 for planned ORIF tomorrow.
+
+Mobility: Independently mobile on ward with supervision for safety due to unfamiliar environment; steady gait, using right arm to steady self, avoiding weight through left arm.
+
+Mood: Calm, cooperative and engaging with care. Expresses some understandable anxiety about operation tomorrow and possible stiffness/weakness afterwards. Reassured re plan and opportunity to ask questions with surgical team in morning. No other concerns raised at this time.
+
+D. Marsden, Staff nurse, Ward 12, 21:40",1
+NOTE-010,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 02:30:00,Night nursing note,K. Tiernan,Staff nurse (night),Trauma & Orthopaedics,Ward 12,"Settled in bed, appears comfortble. Slept intermittently this shift, currently asleep between care.
+
+00:00 woke with L wrist pain, pain score 5/10. PRN morphine sulfate oral solution 5 mg given at 00:05 with good effect, now reprots pain much improved when awake.
+
+Obs at 00:00: RR 17, SpO2 96% on air, BP 136/77, HR 82, temp 37.1°C, NEWS2 0. Remains haemodynamically stable, afebrile.
+
+L limb check 02:30: L forearm and hand in below-elbow dorsal backslab, colour pink, CRT <2s, radial pulse present, sensation normal, swelling mild, full active finger flexion and extension, limb elevated on pillows.
+
+NBM commenced at 02:00 as per plan for theatre. Sips of water stopped. Mouth care offered.
+
+No nausea or vomiting. Passing urine normally. No concerns raised.
+
+K. Tiernan, Staff nurse (night), Ward 12, 02:30",2
+NOTE-011,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 08:15:00,Consultant ward round,Mr R. Ellery,Consultant orthopaedic surgeon,Trauma & Orthopaedics,Ward 12,"Consultant ward round review 08:15 18/02/2026
+
+Overnight summary:
+Admitted yesterday following FOOSH with closed dorsally displaced extra-articular fracture L distal radius with ulnar styloid avulsion. Underwent closed reduction under haematoma block in ED with improved but suboptimal alignment (residual dorsal angulation ~12 degrees, 2 mm radial shortening). Transferred to Ward 12 for elevation and N/V obs, listed for ORIF (volar locking plate) on today’s trauma list. Obs stable overnight, NEWS2 0. Pain controlled with regular paracetamol and PRN oral morphine; woke once with pain (5/10) at 00:00, settled after PRN. NBM from 02:00 for theatre. No concerns from nursing staff. No new injuries or systemic symptoms.
+
+O/E:
+Alert, orientated, comfortable at rest. Obs at 07:00: RR 16, SpO2 97% on air, BP 133/70, HR 76, temp 36.7C, pain 2/10, NEWS2 0. CVS/resp clinically stable.  
+L upper limb: Below-elbow dorsal backslab intact, no pressure areas visible at edges. Hand elevated on pillows. Fingers warm and pink, CRT <2s, radial pulse palpable. Sensation normal in median, ulnar and radial nerve distributions. Full active finger flexion and extension. Swelling mild, no disproportionate pain on passive stretch. No clinical features of acute compartment syndrome or evolving median nerve compression at present.
+
+Investigations:
+Pre-op bloods within acceptable limits for surgery: Hb 117 g/L, WCC 6.4, Plt 240, U&E and bone profile within normal range, eGFR 80, INR 1.1. CRP 1.8. Group and save O RhD positive. Vitamin D low at 38 nmol/L, consistent with underlying osteopenia.
+
+Operative plan:
+Closed injury with residual dorsal angulation and shortening after manipulation. Indication for operative fixation unchanged. Proceed with open reduction and internal fixation of L distal radius using volar locking plate on this afternoon’s trauma list as previously planned. Aim anatomical reduction and stable fixation to allow early wrist ROM post-op. Ulnar styloid avulsion to be assessed intra-operatively; fixation only if unstable (decision intra-op). Anaesthetic pre-assessment completed yesterday; patient remains fit for surgery on current assessment.
+
+Consent:
+Consent for ORIF L distal radius with volar locking plate confirmed with the patient this morning. Risks, benefits and alternatives re-discussed in brief, including but not limited to infection, bleeding, nerve or tendon injury, stiffness, pain, non-union/malunion, hardware irritation or failure, need for further surgery, CRPS, anaesthetic risks and thromboembolic risk. Patient understands and wishes to proceed. Penicillin allergy (rash) noted and to be avoided for peri-op antibiotics.
+
+Bone health / fracture liaison:
+Known osteopenia with low-trauma distal radius fracture and low vitamin D (38 nmol/L). Requires post-fracture bone health optimisation. Arrange DEXA scan if most recent imaging not available/adequate and refer to fracture liaison service for secondary fracture prevention, vitamin D repletion and consideration of anti-resorptive therapy as per local protocol. To be actioned post-operatively prior to discharge.
+
+Plan for today:
+- Proceed to afternoon trauma list for ORIF L distal radius with volar locking plate.  
+- Maintain NBM status; clear fluids as per anaesthetic guidance only.  
+- Continue elevation of L upper limb and 4-hourly N/V checks until theatre.  
+- Analgesia: continue regular paracetamol; PRN oral morphine as prescribed while safe pre-op.  
+- VTE prophylaxis: continue as per ward protocol post-op.  
+- Avoid penicillin; ensure allergy clearly documented on drug chart and theatre checklist.  
+- Post-op: wrist X-rays in recovery as per T&O protocol; commence early finger and, when safe, wrist ROM under physio guidance.  
+- Bone health: T&O team to complete fracture liaison referral and request DEXA prior to discharge planning.  
+- Update patient and spouse on plan; questions answered.
+
+Mr R. Ellery, Consultant orthopaedic surgeon, Ward 12, 08:15",0
