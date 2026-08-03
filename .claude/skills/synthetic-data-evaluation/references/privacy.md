@@ -100,15 +100,19 @@ docs, experimental, ~103 commits.
 - **Copy:** the stage separation, and scoring on extracted entities rather than raw text.
 - **Substitute:** entity extraction. They use GLiNER (primary), spaCy, scispaCy, SpanMarker,
   UniversalNER and Numind NER; `call_llm()` from `scripts/call_llm.py` does the same job with
-  nothing to install. Pass a `model` different from the one that generated the text — see caveats.
+  nothing to install. Pass a `model` different from the one that generated the text where one is
+  available — see caveats.
 - **Don't inherit:** Synthea (hence OpenJDK) for the generation stage — we generate our own text;
   Ollama, llama.cpp and local Llama models for the same reason; the HomeBrew/Mac install steps.
 - **Caveats:** Julia is required only by pyCorrectMatch in the scoring stage, so it is the
   scoring metric itself — substituting it means choosing another uniqueness measure, which is the
   open decision here. If the same LLM wrote the text and extracts the entities, it may
-  under-report exactly what it generated, which is the label-validity trap in privacy form: pass a
-  different `model` to `call_llm()` for extraction than was used for generation, and record both
-  model IDs in report section 9. LLM extraction is also non-deterministic — `call_llm` exposes no
+  under-report exactly what it generated, which is the label-validity trap in privacy form: try to
+  pass a different `model` to `call_llm()` for extraction than was used for generation. Where no
+  other model is available in the environment, use the generating model rather than skipping the
+  check, and record in report section 9 that the two shared a model, so the extraction is a lower
+  bound on what is identifying. Record both model IDs either way. LLM extraction is also
+  non-deterministic — `call_llm` exposes no
   seed and defaults to `temp=0.7` — so it is acceptable for exploration and flagging, and weak for
   a score that must be reproduced or defended.
 

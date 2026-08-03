@@ -72,7 +72,9 @@ If TSTR did not run: downstream utility is unproven. State it in those words.
 
 ## 9. Evaluation — privacy and disclosure
 Checks run and results. Checks not run and why.
-Free-text leakage assessment if the dataset contains text.
+Free-text leakage assessment if the dataset contains text. Where an LLM did the entity extraction,
+record its model ID and the generating model ID; if they are the same, say so and that the result
+is a lower bound.
 Conclusion, one of: safe to share / not safe to share / not established.
 If not established, say what would need to run to establish it.
 

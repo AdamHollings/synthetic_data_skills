@@ -55,10 +55,12 @@ Writing or completing the dataset report → `references/report.md`
 `call_llm_async` for batches. It returns `None` when every attempt fails; check before using the
 result. Two rules specific to evaluation:
 
-- **Pass a different `model` than the one that generated the text.** A model asked to find
+- **Try to pass a different `model` than the one that generated the text.** A model asked to find
   identifying detail in its own output under-reports it — the label-validity trap in privacy form.
-  This is what makes LLM entity extraction a viable substitute for GLiNER and spaCy
-  (`references/privacy.md`).
+  Where the environment exposes only one model, use it, and record in report section 9 that
+  generation and extraction shared a model and that the result is therefore a lower bound on
+  what is identifying. This is what makes LLM entity extraction a viable substitute for GLiNER and
+  spaCy (`references/privacy.md`).
 - **LLM extraction is not reproducible.** No seed is exposed and `temp` defaults to 0.7. Acceptable
   for exploration and flagging, too weak for a score that must be defended. Record which of the two
   it is.

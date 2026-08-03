@@ -1,0 +1,8 @@
+limb_observation_id,patient_id,encounter_id,observation_datetime,limb,immobilisation,colour,capillary_refill_seconds,radial_pulse,sensation,swelling,active_movement,elevated
+LIMB-001,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 10:15:00,Left forearm and hand,Temporary splint,Pink,<2,Present,"Reduced — tingling in thumb, index and middle finger",Moderate,"Able to flex fingers, limited by pain",No
+LIMB-002,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 12:45:00,Left forearm and hand,Temporary splint,Pink,<2,Present,"Reduced — tingling in thumb, index and middle finger",Moderate,"Able to flex fingers, limited by pain",No
+LIMB-003,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 13:15:00,Left forearm and hand,Below-elbow dorsal backslab,Pink,<2,Present,Improved — mild tingling in thumb only,Moderate,Full active finger flexion and extension,Yes
+LIMB-004,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 16:10:00,Left forearm and hand,Below-elbow dorsal backslab,Pink,<2,Present,Normal,Mild,Full active finger flexion and extension,Yes
+LIMB-005,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-17 21:40:00,Left forearm and hand,Below-elbow dorsal backslab,Pink,<2,Present,Normal,Mild,Full active finger flexion and extension,Yes
+LIMB-006,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 02:30:00,Left forearm and hand,Below-elbow dorsal backslab,Pink,<2,Present,Normal,Mild,Full active finger flexion and extension,Yes
+LIMB-007,SYN-BA-0001,SYN-BA-0001-ENC-01,2026-02-18 07:00:00,Left forearm and hand,Below-elbow dorsal backslab,Pink,<2,Present,Normal,Mild,Full active finger flexion and extension,Yes

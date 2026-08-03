@@ -1,0 +1,4 @@
+patient_id,condition_id,condition,status,onset
+SYN-BA-0001,COND-001,Essential hypertension,Active,Pre-existing
+SYN-BA-0001,COND-002,Osteopenia,Active,Pre-existing
+SYN-BA-0001,COND-003,Closed dorsally displaced extra-articular fracture of the left distal radius,Active,2026-02-17 09:20:00
