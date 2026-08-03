@@ -7,7 +7,7 @@ not present when it was generated.
 ## Rules
 
 - Sections 1–6 are written during generation, before evaluation runs.
-- Sections 7–9 are written by the evaluation skill.
+- Sections 7–10 are written by the evaluation skill.
 - Never delete a section. If a check did not run, keep the heading and state why.
 - Never write "safe" or "validated" for a check that did not run. Use "not established".
 - Record the source of every number in the cohort definition, including "assumed, no source".
@@ -42,6 +42,11 @@ Seeding case: real seed data / schema only / from intelligence.
 
 | Modality | Files | Tool | Version | Seed | Key parameters |
 | --- | --- | --- | --- | --- | --- |
+
+For code-generated fields, Version is the package version or the commit SHA of a cloned repo, and
+Seed is the RNG seed. For LLM-generated fields there is no seed: record the model ID under Version,
+the temperature under Key parameters, and "none — not reproducible" under Seed. A seed recorded
+against LLM-generated content is a false provenance claim.
 
 If real seed data was used, state which dataset, under what permission, and whether the
 evaluation holdout was excluded from generation.

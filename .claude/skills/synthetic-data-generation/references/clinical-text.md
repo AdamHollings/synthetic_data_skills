@@ -1,5 +1,17 @@
 # Clinical text
 
+## Contents
+
+- Applies to
+- Tools table
+- Inspiration entries — SCN, NoteChat
+- Gaps — handwritten and scanned letters
+- Label-validity trap
+- Privacy — free-text leakage
+- Coherence
+- Report — sections contributed
+- Evaluation
+
 ## Applies to
 
 Clinical notes, discharge summaries, referral and clinic letters, consultation write-ups,

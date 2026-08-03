@@ -1,5 +1,17 @@
 # EHR records and longitudinal pathways
 
+## Contents
+
+- Applies to
+- Standing decision
+- Tools table
+- Inspiration entries — SynPath, SCN, SyntheaUK, Coherent Data Set
+- Cross-modal precedent: the Coherent Data Set
+- Gaps
+- Coherence
+- Report — sections contributed
+- Evaluation
+
 ## Applies to
 
 Patient journeys rather than snapshots: encounters over time, care pathways, FHIR resources,
@@ -21,9 +33,15 @@ SCN is the exception recorded as easy to set up.
 | SyntheaUK (`nhsengland/swpc_synthea`) | Longitudinal event sequences generated natively; module/rule-based clinical knowledge | Inspiration | Apache 2.0, JDK 11+, Gradle — Java is the blocker |
 | Synthea | Superseded here by SyntheaUK | No | — |
 | synthcity time-series plugins | Generic longitudinal series, irregular time series, censored data, survival | Maybe | PyTorch — see `tabular.md` |
-| TimeGAN / ydata-synthetic | Generic tabular time series | Unassessed | Named in the audit's gap assessment only; no setup notes or verdict |
-| DLH_007 (Confluence, Data Linkage Hub) | Synthetic linked datasets for benchmarking data linkage methods | Unsure | Internal Confluence only, not fetchable, so no entry can be written. Active research project, may not be ready — ask the user |
 | MIMIC-IV v3.1 | Real dataset. Comparator for longitudinal structure; holdout that makes TSTR possible | Reference only | Real patient data — not a generation input without permission and governance confirmation |
+
+Not options until assessed. Ask the user before treating either as available:
+
+- **TimeGAN / ydata-synthetic** — generic tabular time series, named in the audit's gap assessment
+  only, with no setup notes or verdict.
+- **DLH_007** (Confluence, Data Linkage Hub) — synthetic linked datasets for benchmarking data
+  linkage methods. Internal Confluence only, not fetchable, so no entry can be written. An active
+  research project that may not be ready.
 
 Artificial HES data is recorded in `tabular.md`.
 

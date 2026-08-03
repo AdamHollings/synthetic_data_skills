@@ -1,5 +1,17 @@
 # Generating from intelligence (no seed data)
 
+## Contents
+
+- Applies to
+- Status — this is a recorded gap
+- What generates without seed data — templates, rules, agents, parameterised simulators, LLM
+- Method — the five-step sequence
+- Label-validity trap
+- Governance
+- Coherence
+- Report — sections contributed
+- Evaluation
+
 ## Applies to
 
 No real dataset to fit to. Available input is domain knowledge: a clinical scenario, a schema,

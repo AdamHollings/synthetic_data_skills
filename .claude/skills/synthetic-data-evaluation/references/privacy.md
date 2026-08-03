@@ -3,6 +3,17 @@
 Non-negotiable for healthcare. Synthetic is not automatically private: a generator fitted to real
 data can memorise and reproduce it, and a record need not be copied verbatim to identify someone.
 
+## Contents
+
+- Governance before method — the rule on not ingesting real data
+- Fidelity–privacy tension
+- Checks, weakest to strongest — exact-match, attribute inference, membership inference, adversarial
+- Tools table
+- Inspiration entries — TAPAS/SAS, PrivFingerprint, PrivacyLeakage
+- Gaps — image data, audio
+- No real seed data
+- Report — section 9
+
 ## Governance before method
 
 An unresolved governance question sits underneath this axis: how does an agent interact with
@@ -46,8 +57,11 @@ threat model?
 | PrivFingerprint (`github.com/nhsengland/privfp-experiments`) | Privacy risk scoring for free-text data | Inspiration — partly reusable, see below | Julia and OpenJDK, but confined to stages we do not need |
 | PrivacyLeakage (`nhsengland/priv-lm-health-extended`) | Privacy risks and mitigations in healthcare language models, where leakage sits in the model as well as the data | Inspiration | Hard to set up, particularly on FDP |
 | synthcity | Runnable metrics: re-identification risk scoring, attribute prediction from quasi-identifiers via XGBoost or neural net | Maybe | PyTorch — flag before use. The only option here shipping runnable privacy metrics |
-| NDRS Pseudonymiser | Unknown | Unknown | No description, link or considerations recorded in the audit, so no entry can be written and no source can be fetched — ask the user before treating it as an option |
 | DataSynthesizer | Generation-side mitigation: differential-privacy modes | Use | Where privacy is the binding constraint, regenerating with DP may be the fix rather than auditing harder. See the generation skill's `references/tabular.md` |
+
+Not an option until assessed: **NDRS Pseudonymiser** — the audit records no description, link or
+considerations, so no entry can be written and no source can be fetched. Ask the user before
+treating it as available.
 
 Free text is the leakage path structured metrics miss: an unusual combination of narrative details
 can identify someone when every field looks unremarkable. PrivFingerprint is the audit's route for
@@ -85,15 +99,18 @@ docs, experimental, ~103 commits.
   identifying the resulting combination is.
 - **Copy:** the stage separation, and scoring on extracted entities rather than raw text.
 - **Substitute:** entity extraction. They use GLiNER (primary), spaCy, scispaCy, SpanMarker,
-  UniversalNER and Numind NER; an LLM call does the same job with nothing to install.
+  UniversalNER and Numind NER; `call_llm()` from `scripts/call_llm.py` does the same job with
+  nothing to install. Pass a `model` different from the one that generated the text — see caveats.
 - **Don't inherit:** Synthea (hence OpenJDK) for the generation stage — we generate our own text;
   Ollama, llama.cpp and local Llama models for the same reason; the HomeBrew/Mac install steps.
 - **Caveats:** Julia is required only by pyCorrectMatch in the scoring stage, so it is the
   scoring metric itself — substituting it means choosing another uniqueness measure, which is the
   open decision here. If the same LLM wrote the text and extracts the entities, it may
-  under-report exactly what it generated, which is the label-validity trap in privacy form; use a
-  different model for extraction than for generation. LLM extraction is also non-deterministic —
-  acceptable for exploration and flagging, weak for a score that must be reproduced or defended.
+  under-report exactly what it generated, which is the label-validity trap in privacy form: pass a
+  different `model` to `call_llm()` for extraction than was used for generation, and record both
+  model IDs in report section 9. LLM extraction is also non-deterministic — `call_llm` exposes no
+  seed and defaults to `temp=0.7` — so it is acceptable for exploration and flagging, and weak for
+  a score that must be reproduced or defended.
 
 ### PrivacyLeakage
 
