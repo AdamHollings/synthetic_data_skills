@@ -1,8 +1,31 @@
 # Fidelity
 
-Three levels, increasing in difficulty and decreasing in tool support. Run in order; a dataset
-failing level 1 does not need level 3 yet. Record each level separately in report section 7 — a
-single combined score hides which level failed, and the levels have different remedies.
+Four levels, increasing in difficulty and decreasing in tool support. Run in order; a dataset
+failing an earlier level does not need a later one yet. Record each level separately in report
+section 7 — a single combined score hides which level failed, and the levels have different
+remedies.
+
+## Level 0 — schema conformance
+
+Prerequisite before any statistical check. Validates that the generated output matches the
+specification structurally.
+
+Checks:
+- **Column presence**: every field the spec defines exists as a column, regardless of mandation
+  level (M, R, D all produce columns)
+- **Column count**: no extra or missing columns per table
+- **Data types**: each column's values conform to the declared type
+- **Mandatory non-null**: M fields have no missing values
+- **Required population**: R fields are populated where the condition applies
+- **Derived presence**: D fields exist as columns (value may be NULL where derivation notes say so)
+- **Code list validation**: every coded field contains only values from its declared code list
+  (codes are strings — "01" ≠ 1)
+- **Cross-table foreign keys**: IDs referenced across tables exist in the parent table
+
+When a machine-readable schema exists in `schemas/`, load it and automate these checks. Manual
+inspection of column names against a 200-field spec is error-prone.
+
+A dataset failing L0 should not proceed to L1 — fix the schema failures first.
 
 ## Level 1 — univariate
 
@@ -65,6 +88,26 @@ combinations), applied row-wise, returning pass/fail with offending records.
 Deterministic, re-run on every dataset, and unreliable when done by inspection — a model asked to
 eyeball 5,000 rows will miss violations and invent others. Build it sized to the first real
 dataset's rules.
+
+## P-value thresholds (from MSDS proof-of-concept)
+
+No universal thresholds have been agreed (SKILL.md Rule 4). These were used in the MSDS evaluation
+and are a reasonable starting point:
+
+| Check type | Threshold | Interpretation |
+| --- | --- | --- |
+| Most distribution checks (chi-squared, binomial) | p > 0.01 → PASS | Cannot reject that synthetic matches target |
+| Delivery method / high-DOF categoricals | p > 0.001 → PASS | More degrees of freedom needs a more lenient threshold |
+| Correlations | r > 0.1 and p < 0.05 → PASS | Standard direction — low p = significant correlation present |
+
+**P-values read backwards for distribution checks.** High p = PASS (cannot reject match). This is
+the opposite of typical research use. Reports must explain this.
+
+## NHS TOS datasets
+
+For datasets with a TOS, L0 schema checks must verify all mandation levels (M, R, D). See
+`synthetic-data-generation/references/nhs-datasets.md` for the D-field categories and which
+should contain values vs NULL.
 
 ## No real comparator
 
