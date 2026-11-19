@@ -1,8 +1,29 @@
 # Fidelity
 
-Four levels, increasing in difficulty and decreasing in tool support. Run in order; a dataset
-failing an earlier level does not need a later one yet. Record each level separately in report
-section 7 — a single combined score hides which level failed, and the levels have different
+## Our fidelity tiers vs V-Star
+
+The V-Star framework defines fidelity levels for synthetic data evaluation. Our tiers overlap in
+intent but differ in focus: V-Star emphasises statistical resemblance to a real comparator; ours
+are designed for NHS healthcare datasets where real comparator data may not be available, and where
+the distinction between "realistic generation" and "validated against real data" is the key
+boundary.
+
+### Team fidelity tiers
+
+| Tier | Focus | What it means |
+| --- | --- | --- |
+| **Low** | Data structure and valid values | Correct columns, data types, valid codes, plausible marginals. Data looks like it should structurally. Independent sampling — no conditional relationships. |
+| **Medium** | Inter-variable relationships look realistic | Everything in Low, plus: realistic join cardinalities (twins, multiple spells, censored pregnancies, NICE-schedule contacts), realistic missingness, univariate distributions calibrated to published NHS statistics, conditional sampling (age→parity, BMI→GDM, previous CS→delivery method), rare events at published prevalence with clinically coherent cascades, additional tables (e.g. MSD405, MSD109, MSD107 for MSDS), configurable fairness mode. |
+| **High** | Mostly indistinguishable from real data | Same generation approach as Medium. The difference is validation: High fidelity is earned by evaluating against real comparator data (KS tests, JS divergence, discriminator AUC, TSTR, privacy audit) and confirming realistic distributions including rare values. A grade, not a generation mode. |
+
+Low → Medium is a generation improvement. Medium → High is primarily a validation improvement.
+Without real data to compare against, the best claim is Medium.
+
+## Evaluation levels (L0–L3)
+
+Four evaluation levels, increasing in difficulty and decreasing in tool support. Run in order; a
+dataset failing an earlier level does not need a later one yet. Record each level separately in
+report section 7 — a single combined score hides which level failed, and the levels have different
 remedies.
 
 ## Level 0 — schema conformance
