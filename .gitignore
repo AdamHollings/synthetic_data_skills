@@ -4,3 +4,5 @@ data_repos/
 .env
 __pycache__/
 *.pyc
+data/
+!data/broken_arm_day1/
