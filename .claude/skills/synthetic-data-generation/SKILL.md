@@ -102,7 +102,7 @@ Agree the target fidelity tier with the user before generating:
 | Tier | Generation | Evaluation | Typical volume |
 | --- | --- | --- | --- |
 | Low | Schema-correct: valid field names, valid codes, plausible marginals, independent sampling | Schema checks, univariate distributions vs published stats, cross-table FKs | ~200 records |
-| Medium | Conditional sampling with clinical dependency chains, rare event cascades, realistic missingness (field-level or provider-level — see Step 5a) | All low checks plus distance-based metrics (Hellinger, KS, EMD, Cramér's V) against published distributions, missingness rate checks | ~5,000 records |
+| Medium | Conditional sampling with clinical dependency chains, rare event cascades, realistic missingness (field-level or provider-level — see Step 5a), representation of protected groups at published prevalence | All low checks plus distance-based metrics (Hellinger, KS, EMD, Cramér's V) against published distributions, missingness rate checks, advisory fairness checks | ~5,000 records |
 | High | **A grade, not a generation mode.** Same generator as medium. | All medium checks plus validation against real comparator data (all metrics against real distributions, discriminator AUC, TSTR, DCR, privacy audit) | ~10,000+ records |
 
 High fidelity is earned by evidence, not by generation method. Without real data to compare
@@ -134,6 +134,12 @@ Pre-empt these in the brief to save iterations.
   dashboard, provider-level completeness reports)
 - If not provided, the generator will attempt to find published DQ sources and confirm with the
   user before proceeding.
+
+**About fairness:**
+- Should the synthetic data reproduce real-world outcome disparities, or should it be
+  fairness-adjusted (rebalanced to reduce disparities)?
+- If fairness-adjusted: which outcomes and which groups? The evaluation report will note that
+  disparity ratios differ from published stats by design.
 
 **About the use case:**
 - What will this data be used for? (pipeline testing, demos, model training — shapes trade-offs)
@@ -291,6 +297,10 @@ progression, encounter timeline. Sample it from the Step 4 specification in code
 - **Each fix shifts the marginal distribution.** Re-check overall fit against published marginals
   after every batch of fixes, not just the issue you targeted.
 - **NHS numbers must use the 999 test range.** Structurally impossible to collide with real numbers.
+- **Protected group representation.** When demographic fields (ethnicity, deprivation, age, sex)
+  are part of the sampling chain, verify that the marginal distribution of each matches published
+  demographics for the target population. If the user requested fairness-adjusted generation,
+  document which adjustments were made and why in REPORT.md section 6 (coherence).
 
 Precedent: the Coherent Data Set layers pathway data into a longitudinal record and attaches ECG,
 imaging, notes and genomic data via FHIR resources when a patient has a relevant event. A research

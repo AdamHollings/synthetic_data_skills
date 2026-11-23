@@ -111,7 +111,7 @@ data, confirming the generation matches real patterns. Same principle as the ove
 | Completeness distribution shape | Distribution of provider completeness rates is right-skewed (most good, tail of poor) | Published DQ dashboards | Right-skewed, not uniform or bimodal |
 | Cross-field missingness correlation | Fields that tend to be missing together at poor providers are correlated | Domain knowledge, DQ reports | Positive correlation between related fields' missingness within providers |
 | Geographic completeness pattern | Missingness has spatial/regional structure | Published regional DQ breakdowns | Regional variation present, matches known patterns |
-| Fairness interaction | Missingness doesn't disproportionately affect protected groups in ways that don't match real patterns | DQ breakdowns by demographic | Consistent with published demographic patterns |
+| Fairness interaction | Missingness doesn't disproportionately affect protected groups in ways that don't match real patterns | DQ breakdowns by demographic | Consistent with published demographic patterns. See `references/fairness.md` for the full fairness framework — this check covers only the missingness dimension of fairness |
 
 Provider-level checks apply only when provider-level missingness was generated (Medium tier
 opt-in). For field-level-only datasets, check only overall rates.

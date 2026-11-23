@@ -1,6 +1,6 @@
 ---
 name: synthetic-data-evaluation
-description: Assesses synthetic healthcare data along fidelity, utility and privacy. Use when asked whether synthetic data is good, realistic, clinically plausible, useful or safe to share; for univariate and multivariate distribution comparison, clinical-plausibility rule checks, TSTR (train-on-synthetic / test-on-real), synthetic-vs-real discriminator tests, membership- and attribute-inference or re-identification risk, disclosure control, free-text leakage, a privacy audit before a dataset leaves the environment, or an evaluation report for a generated dataset. Also use immediately after generating any dataset with the synthetic-data-generation skill, including the "no real seed data" case where TSTR is impossible. Covers SynthGauge, synthcity metrics, TAPAS/SAS and PrivFingerprint.
+description: Assesses synthetic healthcare data along fidelity, utility, privacy and fairness. Use when asked whether synthetic data is good, realistic, clinically plausible, useful or safe to share; for univariate and multivariate distribution comparison, clinical-plausibility rule checks, TSTR (train-on-synthetic / test-on-real), synthetic-vs-real discriminator tests, membership- and attribute-inference or re-identification risk, disclosure control, free-text leakage, a privacy audit before a dataset leaves the environment, or an evaluation report for a generated dataset. Also use immediately after generating any dataset with the synthetic-data-generation skill, including the "no real seed data" case where TSTR is impossible. Covers SynthGauge, synthcity metrics, TAPAS/SAS and PrivFingerprint.
 ---
 
 # Synthetic healthcare data evaluation
@@ -53,6 +53,10 @@ against a real-trained baseline. Lighter checks: ML comparison, synthetic-vs-rea
 **Privacy** — does it leak. Exact-match checks are necessary and not sufficient; membership and
 attribute inference are the real test. → `references/privacy.md`
 
+**Fairness** — does it perpetuate or amplify bias. Checks whether protected group representation,
+outcome disparities, and conditional relationships in the synthetic data match published patterns.
+Advisory at Medium, mandatory at High. → `references/fairness.md`
+
 Writing or completing the dataset report → `references/report.md`
 
 ## Local scripts
@@ -94,6 +98,7 @@ Evaluation progress:
 - [ ] 3. Tools acquired and verified — installed in .venv and smoke-tested, or recorded as not runnable
 - [ ] 4a. Fidelity L0: schema conformance against full specification (all mandation levels, column counts, code lists)
 - [ ] 4b. Fidelity L1-L3: univariate, multivariate, missingness, clinical — run or explicitly recorded as not run and why
+- [ ] 4c. Fairness: representation, disparity preservation, per-subgroup checks — run or recorded as advisory/not run
 - [ ] 5. Utility: TSTR against a real holdout, or the substitution named as a substitution
 - [ ] 6. Privacy: checks run; nothing requiring real data run without user confirmation
 - [ ] 7. Fidelity and privacy read against each other before either is reported
@@ -129,8 +134,8 @@ The fidelity tier claimed by the generator determines which checks are expected:
 | Tier | Required checks |
 | --- | --- |
 | Low | L0 schema conformance, L1 univariate plausibility (informal), L2 cross-table FKs, L3 clinical rules |
-| Medium | All Low checks plus: Hellinger distance (categorical), KS distance + EMD (continuous), Cramér's V (categorical pairs), Pearson (continuous pairs), conditional distribution checks, Gower mode collapse, missingness validation, clinical plausibility rules — all against published stats |
-| High | All Medium checks against real data, plus: correlation matrix distance, PCA/t-SNE overlay, discriminator AUC, TSTR, DCR (Gower), exact match, attribute inference, membership inference, linkability |
+| Medium | All Low checks plus: Hellinger distance (categorical), KS distance + EMD (continuous), Cramér's V (categorical pairs), Pearson (continuous pairs), conditional distribution checks, Gower mode collapse, missingness validation, clinical plausibility rules — all against published stats. Fairness checks advisory (representation, disparity preservation) |
+| High | All Medium checks against real data, plus: correlation matrix distance, PCA/t-SNE overlay, discriminator AUC, TSTR, DCR (Gower), exact match, attribute inference, membership inference, linkability. Fairness checks mandatory (all Medium plus amplification, downstream fairness, per-subgroup validation) |
 
 High fidelity is earned by evidence, not by generation method. Without real data to compare
 against, the best claim is medium.
@@ -216,6 +221,11 @@ One row per metric checked, with value and RAG rating per the bands in `referenc
 Checks that did not run are listed separately with the reason — they do not get a RAG rating. See
 `references/report.md` section 7 template for the format.
 
+**Fairness checks.** At Medium tier, fairness checks are advisory — run representation adequacy
+and outcome disparity preservation where published comparators exist. At High tier, all fairness
+checks are mandatory including per-subgroup validation and amplification checks. See
+`references/fairness.md`.
+
 ## Step 5 — utility
 
 TSTR where a real holdout exists: train on synthetic, test on real, and report the real-trained
@@ -248,6 +258,10 @@ reading is leakage (Rule 2).
 | 0.55–0.75 | Good fidelity |
 | 0.75–0.85 | Moderate fidelity |
 | > 0.85 | Poor fidelity — easily distinguishable |
+
+**Fairness against fidelity.** A dataset with good overall fidelity but poor per-subgroup
+fidelity is unfair — it looks realistic in aggregate but misrepresents minority groups. Check
+per-subgroup Hellinger/KS whenever overall metrics are Green.
 
 ## Step 8 — write the report and the verdict
 

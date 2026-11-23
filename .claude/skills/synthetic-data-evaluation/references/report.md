@@ -74,12 +74,15 @@ Fidelity deliberately traded for coherence, and where.
 | L2 | Mode collapse (Gower) | 🟢/🟡/🔴 | NN distance distribution shape |
 | L2 | Provider completeness | 🟢/🟡/🔴 | Variance present / absent (if provider-level) |
 | L3 | Clinical plausibility | 🟢/🔴 | N rules checked; M violations found |
+| Fairness | Representation adequacy | 🟢/🟡/🔴 | Worst Hellinger across protected groups |
+| Fairness | Disparity preservation | 🟢/🟡/🔴 | Worst ratio deviation vs published |
+| Fairness | Per-subgroup (High only) | 🟢/🟡/🔴 | Within-group Hellinger/KS; amplification ratio |
 
 One row per evaluation category, not per field. The RAG rating reflects the worst result
 in that category. Fields or pairs that scored Amber or Red are listed in the Detail section
 below — Green items are not enumerated individually.
 
-RAG bands defined in `fidelity.md`.
+RAG bands defined in `fidelity.md` (fidelity metrics) and `fairness.md` (fairness metrics).
 
 ### Exceptions (Amber and Red)
 
@@ -92,6 +95,10 @@ Only items that did not score Green. Omit this table if all checks are Green.
 
 Univariate, multivariate, missingness, clinical plausibility results with full context.
 Tool used. Result per level. State which levels could not run and why.
+
+Include which protected characteristics were checked for fairness, which published disparity
+sources were used, and whether fairness-adjusted generation was applied. At Medium, record
+whether advisory fairness checks were run or skipped.
 
 ## 8. Evaluation — utility
 TSTR result with the real-trained baseline and the gap, or the reason TSTR could not run.
