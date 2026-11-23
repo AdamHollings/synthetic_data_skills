@@ -82,7 +82,8 @@ Generation progress:
 - [ ] 3. Repos cloned to data_repos/ only where pip did not cover it; licence checked, commit SHA recorded
 - [ ] 4. Data specification written (or verified against technical spec); every number has a recorded source
 - [ ] 5. Patient state sampled in code with a seeded RNG; labels derived from it before any content exists
-- [ ] 6. Every modality generated from that state — one clock, per-patient seeds; column counts verified against spec
+- [ ] 5a. Missingness modelled — approach agreed (field-level or provider-level), rates sourced, structural NULLs distinguished from stochastic missingness
+- [ ] 6. Every modality generated from that state — one clock, per-patient seeds; column counts verified against spec; generator code saved to generators/{dataset}/
 - [ ] 7. REPORT.md sections 1-6 written
 - [ ] 8. Handed to synthetic-data-evaluation
 ```
@@ -101,8 +102,8 @@ Agree the target fidelity tier with the user before generating:
 | Tier | Generation | Evaluation | Typical volume |
 | --- | --- | --- | --- |
 | Low | Schema-correct: valid field names, valid codes, plausible marginals, independent sampling | Schema checks, univariate distributions vs published stats, cross-table FKs | ~200 records |
-| Medium | Conditional sampling with clinical dependency chains, rare event cascades, realistic missingness | All low checks plus statistical tests against published distributions | ~5,000 records |
-| High | **A grade, not a generation mode.** Same generator as medium. | All medium checks plus validation against real comparator data (KS, JS divergence, discriminator, TSTR, privacy audit) | ~10,000+ records |
+| Medium | Conditional sampling with clinical dependency chains, rare event cascades, realistic missingness (field-level or provider-level — see Step 5a) | All low checks plus distance-based metrics (Hellinger, KS, EMD, Cramér's V) against published distributions, missingness rate checks | ~5,000 records |
+| High | **A grade, not a generation mode.** Same generator as medium. | All medium checks plus validation against real comparator data (all metrics against real distributions, discriminator AUC, TSTR, DCR, privacy audit) | ~10,000+ records |
 
 High fidelity is earned by evidence, not by generation method. Without real data to compare
 against, high fidelity cannot be claimed. Each fidelity tier gets its own output folder (e.g.
@@ -125,6 +126,14 @@ Pre-empt these in the brief to save iterations.
 - Are there relevant clinical guidelines?
 - Do you have code mapping tables? (code to category — often the single highest-value input)
 - At what granularity are the published statistics? (overall aggregate vs per sub-population)
+
+**About data quality and missingness** (Medium fidelity and above):
+- How should missingness be represented? (field-level flat rates, or provider-level completeness
+  profiles?)
+- Do you have data quality reports or completeness dashboards for this dataset? (e.g. MSDS DQ
+  dashboard, provider-level completeness reports)
+- If not provided, the generator will attempt to find published DQ sources and confirm with the
+  user before proceeding.
 
 **About the use case:**
 - What will this data be used for? (pipeline testing, demos, model training — shapes trade-offs)
@@ -287,6 +296,43 @@ Precedent: the Coherent Data Set layers pathway data into a longitudinal record 
 imaging, notes and genomic data via FHIR resources when a patient has a relevant event. A research
 artifact, not installable — replicate the approach. See `references/healthcare-ehr.md`.
 
+## Step 5a — inject realistic missingness (Medium fidelity and above)
+
+At Low fidelity, no missingness is injected — all generated fields are populated (except
+spec-mandated NULLs like TOS "always NULL" derivations).
+
+At Medium fidelity, missingness should be realistic based on available statistics and published
+information. This is best-effort realism — calibrated against published DQ reports and dashboards,
+not validated against real microdata. Truly validated missingness (confirmed against actual
+provider-level completeness data) is a High fidelity achievement, following the same principle as
+the overall tier model: Medium = calibrated against published stats, High = validated against real
+data.
+
+Two approaches, agreed with the user at Step 1:
+
+**Field-level missingness (simpler):**
+- Apply a flat missingness rate per field, sourced from published data quality reports.
+- Independent per record — every record has the same probability of missing each field.
+- Suitable when no provider-level DQ data is available.
+
+**Provider-level missingness (more realistic, opt-in):**
+1. Assign each record to a provider (already happens via OrgCodeProvider or equivalent).
+2. Assign each provider a completeness profile — per-field completeness rates. Source from
+   published DQ dashboards where available; otherwise model a plausible distribution (most
+   providers good, right-skewed tail of poor submitters).
+3. Sample missingness per-provider, not per-record. A record at a poor-completeness provider has
+   a higher chance of missing specific fields.
+4. Correlate missingness across fields within a provider — a provider poor on smoking status is
+   likely poor on BMI too. Not independent per field.
+5. The overall national missingness rate per field should still match published figures.
+
+For both approaches:
+- Source missingness rates from published DQ reports/dashboards. Record the source.
+- If no DQ source exists, state this in the report and use domain-knowledge estimates.
+- Missingness applies to R and some D fields. M fields are never missing by definition.
+- Spec-mandated NULLs (TOS "always NULL" derivations) are structural, not missingness — they
+  apply regardless of fidelity tier.
+
 ## Step 6 — generate each modality from the state
 
 Pass the state into every generator. Use parameterised simulators where they exist and `call_llm()`
@@ -298,6 +344,11 @@ remedy then is regeneration from the state, not a re-run of the metric.
 
 After generating each table, verify that the column count matches the specification exactly. A
 mismatch means fields are missing or extra columns have been introduced.
+
+**Commit the generator.** Save the generator code to `generators/{dataset}/` with separate files
+for the sampling chain, distribution parameters, and config. The distribution file must cite the
+source for every number. This makes the dataset reproducible and the generator iterable across
+sessions. Generated CSVs are NOT committed — they stay in `data/`.
 
 ## Step 7 — write the report
 

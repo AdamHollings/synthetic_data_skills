@@ -97,6 +97,26 @@ Not all D fields are NULL. These have real computation rules:
 - **NMPA (National Maternity and Perinatal Audit)**: CS rate analysis
 - **MBRRACE-UK**: Outcomes by ethnicity — relevant for fairness checks
 
+## Data quality and missingness references
+
+- **MSDS Data Quality Dashboard**: NHS England publishes MSDS data quality summaries showing
+  provider-level completeness for key fields. Use as the primary source for missingness rates
+  when generating Medium-fidelity data.
+- **DQMI (Data Quality Maturity Index)**: NHS England's cross-dataset DQ scoring — includes
+  MSDS-level completeness and validity scores by provider. Useful for calibrating provider-level
+  completeness distributions.
+- **MSDS Data Quality Summary**: Periodic summary reports from NHS England showing field-level
+  completeness trends over time.
+
+When generating Medium-fidelity MSDS data with missingness:
+- Distinguish **structural NULLs** (SmokingStatus*, PersonBMI*, RobsonGroup, Map*, Master*,
+  commissioning placeholders — see "MSDS-specific NULL fields" above) from **stochastic
+  missingness** (e.g. ethnicity, BMI as a clinical value, booking appointment details).
+- Smoking status and BMI are the canonical examples of provider-level completeness variation:
+  both require asking the patient, so completeness varies by provider workflow. The TOS D-fields
+  for SmokingStatus and PersonBMI must be NULL, but internal smoking_status and BMI values used
+  for conditional sampling should have provider-correlated missingness.
+
 ## Evaluation checks specific to MSDS
 
 - L0: all 3 mandation levels produce columns; D-field NULL/populated status matches derivation
@@ -107,5 +127,10 @@ Not all D fields are NULL. These have real computation rules:
   outcome given delivery method)
 - L3: no pregnant males, plausible medication-condition pairings, Apgar scores consistent with
   outcome, contact scheduling follows NICE NG201 pattern
-- P-value thresholds used: most checks p > 0.01 → PASS; delivery method (high DOF) p > 0.001 →
-  PASS; correlations r > 0.1 and p < 0.05 → PASS
+- L1 missingness: field-level rates vs DQ dashboard; D-fields whose TOS derivation notes say
+  "always NULL" must be 100% absent (see "MSDS-specific NULL fields" above for the current list);
+  other D-fields have real derivation logic and should be populated
+- L2 key pairs for Cramér's V: presentation × delivery method, parity × age band, GDM × gestation
+  band, previous CS × delivery method
+- Metric thresholds and RAG bands: use the universal baseline in `fidelity.md`
+- Legacy PoC thresholds (chi-squared, correlations) documented in `fidelity.md` for continuity

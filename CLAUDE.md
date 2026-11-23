@@ -82,11 +82,29 @@ Each dataset reference file should include: what the dataset is, the conditional
 
 `scripts/format_parser.py` — parses NHS TOS format notation (e.g. `an10 CCYY-MM-DD`, `max n20`) into structured validation rules. Used by the schema extractor.
 
-Dataset-specific scripts (generators, evaluators, distribution files) are written per-project and not committed — the patterns they follow are documented in the skills and reference files.
+## Generator scripts
+
+Dataset-specific generator scripts are committed to `generators/{dataset}/` so that future runs
+can reproduce or iterate on the dataset. Each dataset subfolder typically contains:
+
+- `generate_{dataset}.py` — the conditional sampling chain and table output
+- `distributions.py` — sourced rates, prevalences, conditional probabilities (published
+  aggregates with citations, never patient-level data)
+- `config.py` — cohort size, fidelity tier, output path, RNG seed
+
+Evaluator scripts follow the same pattern in `generators/{dataset}/` when they are
+dataset-specific (e.g. clinical plausibility rules for MSDS).
 
 ## Generated data
 
-Generated CSV data is not committed to this repo. Each generation run writes to `data/{dataset}_{fidelity}/` locally. The `data/broken_arm_day1/` demo dataset is the exception — it is committed as a curated example.
+Generated CSV data is not committed to this repo. Each generation run writes to
+`data/{dataset}_{fidelity}/` locally. The generator code is the deliverable; the data is
+reproducible from it. The `data/broken_arm_day1/` demo dataset is the exception — it is committed
+as a curated example.
+
+Synthetic data outputs that pass evaluation at acceptable quality should be published to the team
+HuggingFace: https://huggingface.co/datasets/NHSEDataScience/synthetic_clinical_notes — confirm
+with the user before publishing.
 
 ## Python
 

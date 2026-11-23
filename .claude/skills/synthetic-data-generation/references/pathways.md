@@ -115,6 +115,23 @@ fix a conditional → check the marginal → adjust if needed → check conditio
 - Published 111/999 activity statistics (NHS England)
 - Disposition category definitions and Dx code mappings
 
+## Data quality and missingness references
+
+- **NHS 111 MDS Data Quality reports**: Published summaries of field-level completeness for the
+  111 Minimum Data Set. Use for calibrating missingness rates.
+- **DQMI (Data Quality Maturity Index)**: Cross-dataset DQ scoring — check whether Pathways /
+  111 MDS is covered.
+- **NHS England 111/999 activity statistics**: May include data quality commentary alongside
+  activity volumes.
+
+When generating Medium-fidelity Pathways data with missingness:
+- "Unknown" disposition is structurally absent from a clean sampling chain (see above) — inject
+  at published rates. This is a form of missingness in the outcome field.
+- Provider-level completeness variation is relevant for fields like clinician ID, triage
+  timestamps, and symptom group detail — these vary by provider workflow and system configuration.
+- Where no published provider-level DQ source exists, note this gap and use domain-knowledge
+  estimates.
+
 ## Evaluation checks specific to Pathways
 
 - L0: all fields present, disposition codes valid, Dx codes match their disposition category
@@ -124,3 +141,8 @@ fix a conditional → check the marginal → adjust if needed → check conditio
   clinician involvement given disposition)
 - L3: no impossible symptom-disposition combinations, call durations within plausible ranges,
   timestamps in correct order (call start < triage start < triage end < call end)
+- L1 missingness: "Unknown" disposition injected at published rate; field-level completeness
+  vs published DQ reports
+- L2 key pairs for Cramér's V: service type × disposition, symptom group × disposition,
+  service type × clinician involvement
+- Metric thresholds and RAG bands: use the universal baseline in `fidelity.md`

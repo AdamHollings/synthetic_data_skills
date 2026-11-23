@@ -93,7 +93,7 @@ Evaluation progress:
 - [ ] 2. Scope fixed — which checks can run, which need real data, which need user permission
 - [ ] 3. Tools acquired and verified — installed in .venv and smoke-tested, or recorded as not runnable
 - [ ] 4a. Fidelity L0: schema conformance against full specification (all mandation levels, column counts, code lists)
-- [ ] 4b. Fidelity L1-L3: univariate, multivariate, clinical — run or explicitly recorded as not run and why
+- [ ] 4b. Fidelity L1-L3: univariate, multivariate, missingness, clinical — run or explicitly recorded as not run and why
 - [ ] 5. Utility: TSTR against a real holdout, or the substitution named as a substitution
 - [ ] 6. Privacy: checks run; nothing requiring real data run without user confirmation
 - [ ] 7. Fidelity and privacy read against each other before either is reported
@@ -128,9 +128,9 @@ The fidelity tier claimed by the generator determines which checks are expected:
 
 | Tier | Required checks |
 | --- | --- |
-| Low | L0 schema conformance, L1 univariate vs published stats, L2 cross-table FKs |
-| Medium | All low checks plus statistical tests (binomial, chi-squared, Pearson) against published distributions |
-| High | All medium checks plus validation against real data (KS, JS divergence, discriminator, TSTR, privacy audit) |
+| Low | L0 schema conformance, L1 univariate plausibility (informal), L2 cross-table FKs, L3 clinical rules |
+| Medium | All Low checks plus: Hellinger distance (categorical), KS distance + EMD (continuous), Cramér's V (categorical pairs), Pearson (continuous pairs), conditional distribution checks, Gower mode collapse, missingness validation, clinical plausibility rules — all against published stats |
+| High | All Medium checks against real data, plus: correlation matrix distance, PCA/t-SNE overlay, discriminator AUC, TSTR, DCR (Gower), exact match, attribute inference, membership inference, linkability |
 
 High fidelity is earned by evidence, not by generation method. Without real data to compare
 against, the best claim is medium.
@@ -180,24 +180,41 @@ remedies. → `references/fidelity.md`
 column counts match. This is prerequisite. See `references/fidelity.md` Level 0.
 
 **L1 — univariate.** Column distributions vs published stats or the cohort definition.
+Metrics: Hellinger distance for categorical columns, KS distance and EMD for continuous columns.
+Compare against published statistics or the cohort definition — no real data needed.
+Check missingness rates per field against published DQ reports or TOS structural NULL rules.
 
 **L2 — multivariate.** Correlations, joint distributions, cross-table consistency.
+Metrics: Pearson correlation for continuous pairs, Cramér's V for categorical pairs, conditional
+Hellinger per stratum, Gower distance distribution for mode collapse detection. When provider-level
+missingness was generated, check completeness variance and cross-field correlation within providers.
 
 **L3 — clinical.** Domain logic a clinician would catch. Rules-based, written in-house. No
 off-the-shelf metric; do not search for a library.
 
-### Interpreting p-values
+### Interpreting distance metrics
 
-For distribution checks, p-values test the null hypothesis that the synthetic distribution matches
-the target. This is the OPPOSITE of typical research:
+For distribution checks, distance metrics (Hellinger, KS, EMD) measure magnitude of difference
+between synthetic and target distributions. Smaller is better. See `references/fidelity.md` for
+interpretation bands and RAG ratings.
 
-- **High p-value = PASS** (cannot reject that synthetic matches target)
-- **Low p-value = FAIL** (synthetic significantly differs from target)
+**Why distance metrics over p-values.** Chi-squared p-values are sample-size-dependent: with large
+synthetic datasets, trivially small differences become "significant." Hellinger distance is bounded
+[0, 1] and comparable across datasets. Legacy p-value thresholds from earlier evaluations are
+documented in `references/fidelity.md` for continuity.
 
-Reports must include a "Reading the p-values" section explaining this.
+Exception: correlation checks (Pearson, Cramér's V) test whether associations are PRESENT in the
+synthetic data at the strength the conditional sampling chain implies. They use standard
+interpretation (higher V or r = stronger association = correct if the chain requires it).
 
-Exception: correlation checks test whether correlations are PRESENT, so they use standard
-interpretation (low p = significant correlation = PASS).
+**Missingness validation.** At Medium tier and above, check that missingness patterns match
+expectations. See the dedicated missingness section in `references/fidelity.md` — this covers both
+field-level rates and provider-level completeness variation.
+
+**RAG summary table.** After running all metrics, produce a RAG summary table for report section 7.
+One row per metric checked, with value and RAG rating per the bands in `references/fidelity.md`.
+Checks that did not run are listed separately with the reason — they do not get a RAG rating. See
+`references/report.md` section 7 template for the format.
 
 ## Step 5 — utility
 

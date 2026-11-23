@@ -62,8 +62,36 @@ Cross-modality links asserted (e.g. ECG heart rate follows the observations tabl
 Fidelity deliberately traded for coherence, and where.
 
 ## 7. Evaluation — fidelity
-Univariate, multivariate, clinical plausibility. Tool used. Result per level.
-State which levels could not run and why.
+
+### RAG summary
+
+| Level | Scope | RAG | Summary |
+| --- | --- | --- | --- |
+| L0 | Schema conformance | 🟢/🔴 | X/Y tables pass; Z fields flagged |
+| L1 | Univariate distributions | 🟢/🟡/🔴 | Worst Hellinger: X (field). N fields Amber or Red. |
+| L1 | Missingness rates | 🟢/🟡/🔴 | N fields within range; M fields flagged |
+| L2 | Multivariate associations | 🟢/🟡/🔴 | Key pairs checked; worst Cramér's V gap: X |
+| L2 | Mode collapse (Gower) | 🟢/🟡/🔴 | NN distance distribution shape |
+| L2 | Provider completeness | 🟢/🟡/🔴 | Variance present / absent (if provider-level) |
+| L3 | Clinical plausibility | 🟢/🔴 | N rules checked; M violations found |
+
+One row per evaluation category, not per field. The RAG rating reflects the worst result
+in that category. Fields or pairs that scored Amber or Red are listed in the Detail section
+below — Green items are not enumerated individually.
+
+RAG bands defined in `fidelity.md`.
+
+### Exceptions (Amber and Red)
+
+| Field / pair | Metric | Value | RAG | Issue |
+| --- | --- | --- | --- | --- |
+
+Only items that did not score Green. Omit this table if all checks are Green.
+
+### Detail
+
+Univariate, multivariate, missingness, clinical plausibility results with full context.
+Tool used. Result per level. State which levels could not run and why.
 
 ## 8. Evaluation — utility
 TSTR result with the real-trained baseline and the gap, or the reason TSTR could not run.
@@ -88,3 +116,8 @@ No threshold has been agreed for what fidelity score is acceptable. Inventing on
 precision. The report instead makes the basis of every claim explicit, so a reader can judge
 fitness for their own use. A number without its method, provenance and unrun checks beside it is
 not evidence.
+
+RAG bands (Green/Amber/Red) were introduced as interpretation guidance — they signal where to
+look, not whether a dataset passes or fails. A Red rating means "investigate this metric," not
+"reject the dataset." The RAG summary table gives at-a-glance readability; the detail section
+provides the context needed to judge fitness for use.
